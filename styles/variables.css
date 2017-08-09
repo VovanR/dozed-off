@@ -1,0 +1,16 @@
+:root {
+  --button-color: gray;
+  --button-border-color: silver;
+  --button-background-color: transparent;
+  --disabled-button-color: silver;
+  --disabled-button-border-color: silver;
+  --disabled-button-background-color: rgba(0, 0, 0, 0.05);
+  --active-button-border-color: #2ecc71;
+  --active-button-background-color: #2ecc71;
+
+  --progress-border-color: silver;
+  --progress-background-color: whiteSmoke;
+  --progress-box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.15);
+  --progress-border-radius: 0;
+  --progress-bar-background-color: #2ecc71;
+}
