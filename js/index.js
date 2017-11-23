@@ -1,11 +1,6 @@
 /* global document fetch soundManager */
 /* eslint arrow-parens: "off" */
 
-const SOUND_URL = 'sounds/393633__daronoxus__ding.mp3'
-const SOUND_ID = 'ding'
-const SLEEP_TIMEOUT = 1000 * 60 * 15
-const PROGRESS_INTERVAL = 1000
-
 const containerBlock = document.getElementById('app')
 const sleepButton = document.getElementById('sleep-button')
 const progressBlock = document.getElementById('sleep-progress')
@@ -27,7 +22,7 @@ const startProgress = () => {
   progressInterval = setInterval(() => {
     progressValue += 1
     progressBlock.value = progressValue
-  }, PROGRESS_INTERVAL);
+  }, PROGRESS_INTERVAL)
 }
 const stopProgress = () => {
   if (progressInterval) {
@@ -50,6 +45,8 @@ function initialize() {
 }
 
 function startTimer() {
+  requestNotificationPermission()
+
   disableSleepButton()
 
   startProgress()
@@ -58,7 +55,8 @@ function startTimer() {
     playSound()
     enableSleepButton()
     stopProgress()
-  }, SLEEP_TIMEOUT);
+    showNotification(NOTIFICATION_MESSAGE)
+  }, SLEEP_TIMEOUT)
 }
 
 soundManager.onready(initialize)
