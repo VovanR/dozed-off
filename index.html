@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>dozed-off</title>
@@ -11,28 +11,29 @@
   <link href="styles/index.css" rel="stylesheet">
 </head>
 <body>
-  <div id="app" class="app">
+  <main id="app" class="app">
     <button
       id="sleep-button"
       class="button"
       type="button"
       autofocus
-      >
-      15m
+    >
+      Start
     </button>
 
     <progress
+      id="sleep-progress"
       max="15"
       value="0"
-      id="sleep-progress"
-      >
+    >
     </progress>
-  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/soundmanager2/2.97a.20150601/script/soundmanager2-nodebug-jsmin.js"></script>
-  <script src="js/constants.js"></script>
-  <script src="js/utils/time.js"></script>
-  <script src="js/utils/notification.js"></script>
-  <script src="js/index.js"></script>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/soundmanager2/2.97a.20150601/script/soundmanager2-nodebug-jsmin.js" defer></script>
+  <script src="js/constants.js" defer></script>
+  <script src="js/utils/time.js" defer></script>
+  <script src="js/utils/notification.js" defer></script>
+  <script src="js/index.js" defer></script>
 </body>
 </html>
