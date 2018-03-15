@@ -1,5 +1,6 @@
 :root {
   --button-color: gray;
+  --button-font-size: 3em;
   --button-border-color: silver;
   --button-background-color: transparent;
   --disabled-button-color: silver;
