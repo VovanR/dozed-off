@@ -2,16 +2,19 @@
   "name": "dozed-off",
   "version": "0.0.0",
   "description": "",
-  "main": "index.html",
+  "private": true,
+  "license": "MIT",
+  "repository": "VovanR/dozed-off",
+  "author": "Vladimir Rodkin <mail@vovanr.com> (https://github.com/VovanR)",
   "scripts": {
+    "start": "hs .",
     "test": "xo"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/VovanR/dozed-off.git"
+  "main": "index.html",
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "xo": "^0.18.1"
   },
-  "author": "Vladimir Rodkin <mail@vovanr.com> (http://vovanr.com/)",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/VovanR/dozed-off/issues"
   },
@@ -19,8 +22,5 @@
   "xo": {
     "space": true,
     "semicolon": false
-  },
-  "devDependencies": {
-    "xo": "^0.18.1"
   }
 }
