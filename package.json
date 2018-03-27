@@ -1,7 +1,7 @@
 {
   "name": "dozed-off",
   "version": "0.0.0",
-  "description": "",
+  "description": "Break for 15 minutes sleep",
   "private": true,
   "license": "MIT",
   "repository": "VovanR/dozed-off",
