@@ -1,7 +1,7 @@
 class SleepButton {
   constructor({
     timeout,
-    onClick,
+    onClick
   }) {
     this._timeout = timeout
     this._onClick = onClick
@@ -52,9 +52,6 @@ class SleepButton {
     return this
   }
 
-  /**
-   * @param {boolean} disabled
-   */
   _toggle(disabled) {
     this._element.disabled = disabled
     return this

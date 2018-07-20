@@ -2,7 +2,7 @@ import {NOTIFICATION_PERMISSIONS} from '../../constants.js'
 
 class NotificationMessage {
   constructor({
-    message,
+    message
   }) {
     this._message = message
 

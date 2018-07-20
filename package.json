@@ -13,7 +13,7 @@
   "main": "index.html",
   "devDependencies": {
     "http-server": "^0.11.1",
-    "xo": "^0.18.1"
+    "xo": "^0.21.1"
   },
   "bugs": {
     "url": "https://github.com/VovanR/dozed-off/issues"
@@ -21,6 +21,11 @@
   "homepage": "https://github.com/VovanR/dozed-off#readme",
   "xo": {
     "space": true,
-    "semicolon": false
+    "semicolon": false,
+    "envs": "browser",
+    "rules": {
+      "import/extensions": 0,
+      "unicorn/import-index": 0
+    }
   }
 }

@@ -1,7 +1,7 @@
 class Progress {
   constructor({
     value,
-    max,
+    max
   }) {
     this._value = value || 0
     this._max = max
@@ -21,7 +21,6 @@ class Progress {
   }
 
   /**
-   * @param {Number} minutes
    * @return {HTMLElement} <progress/>
    */
   getElement() {
@@ -31,9 +30,6 @@ class Progress {
     return this._build()._element
   }
 
-  /**
-   * @param {Number} value
-   */
   setValue(value) {
     this._element.value = value
     return this

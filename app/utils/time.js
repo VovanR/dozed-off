@@ -18,7 +18,7 @@ function mathRound(num) {
  * formatSecondsToTime(460000)
  *
  * @param {Number} seconds
- * @returns {String}
+ * @returns {String} time
  */
 function formatSecondsToTime(seconds) {
   if (seconds === 0 || typeof seconds !== 'number') {

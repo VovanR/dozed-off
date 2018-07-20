@@ -6,6 +6,6 @@ export const SLEEP_TIMEOUT = 1000 * 60 * 15
 export const NOTIFICATION_PERMISSIONS = {
   DEFAULT: 'default',
   DENIED: 'denied',
-  GRANTED: 'granted',
+  GRANTED: 'granted'
 }
 export const NOTIFICATION_MESSAGE = 'Wake up!'

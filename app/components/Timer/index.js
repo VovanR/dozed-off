@@ -2,7 +2,7 @@ class Timer {
   constructor({
     timeout,
     onTick,
-    onEnd,
+    onEnd
   }) {
     this._timeout = timeout
     this._onTick = onTick
@@ -18,7 +18,7 @@ class Timer {
   }
 
   _next() {
-    window.requestAnimationFrame((timestamp) => this._tick(timestamp))
+    window.requestAnimationFrame(timestamp => this._tick(timestamp))
   }
 
   _end() {

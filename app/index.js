@@ -1,4 +1,4 @@
-/* global document fetch soundManager */
+/* global fetch soundManager */
 /* eslint arrow-parens: "off" */
 
 import SleepButton from './components/SleepButton/index.js'
@@ -9,7 +9,7 @@ import {
   SLEEP_TIMEOUT,
   SOUND_ID,
   SOUND_URL,
-  NOTIFICATION_MESSAGE,
+  NOTIFICATION_MESSAGE
 } from './constants.js'
 
 const containerBlock = document.getElementById('app')
@@ -17,12 +17,12 @@ const containerBlock = document.getElementById('app')
 const timeout = SLEEP_TIMEOUT
 
 const sleepButton = new SleepButton({
-  timeout: timeout,
-  onClick: startTimer,
+  timeout,
+  onClick: startTimer
 })
 const progress = new Progress({
   value: 0,
-  max: timeout,
+  max: timeout
 })
 
 const fragment = document.createDocumentFragment()
@@ -35,28 +35,28 @@ function initialize() {
     id: SOUND_ID,
     url: SOUND_URL,
     onload: (success) => sleepButton.toggle(!success),
-    autoLoad: true,
+    autoLoad: true
   })
 }
 
 function startTimer() {
   const notificationMessage = new NotificationMessage({
-    message: NOTIFICATION_MESSAGE,
+    message: NOTIFICATION_MESSAGE
   })
 
   sleepButton.disable()
 
   new Timer({
-    timeout: timeout,
+    timeout,
     onEnd: () => {
       soundManager.play(SOUND_ID)
       sleepButton.enable()
       progress.setValue(0)
       notificationMessage.show()
     },
-    onTick: (progressTime, restTime) => {
+    onTick: progressTime => {
       progress.setValue(progressTime)
-    },
+    }
   })
 }
 
