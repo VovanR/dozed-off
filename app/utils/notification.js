@@ -1,10 +1,12 @@
-function requestNotificationPermission() {
+import {NOTIFICATION_PERMISSIONS} from '../constants.js'
+
+export function requestNotificationPermission() {
   if (Notification.permission === NOTIFICATION_PERMISSIONS.DEFAULT) {
     Notification.requestPermission()
   }
 }
 
-function showNotification(message) {
+export function showNotification(message) {
   if (Notification.permission === NOTIFICATION_PERMISSIONS.GRANTED) {
     return new Notification(message)
   }
