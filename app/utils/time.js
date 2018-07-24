@@ -1,6 +1,6 @@
 // Format timestamp
-function formatTime(ms) {
-  return formatSecondsToTime(mathRound(ms))
+export function formatTime(ms) {
+  return formatMillisecondsToTime(mathRound(ms))
 }
 
 // Fastest math round (Math.round)
@@ -9,24 +9,24 @@ function mathRound(num) {
 }
 
 /**
- * Format Seconds To Time
+ * Format Milliseconds To Time
  *
  * @see {@link https://jsfiddle.net/VovanR/kbx1sayd/}
  *
  * @example
  * // returns '07:40'
- * formatSecondsToTime(460000)
+ * formatMillisecondsToTime(460000);
  *
- * @param {Number} seconds
- * @returns {String} time
+ * @param {Number} milliseconds
+ * @returns {String}
  */
-function formatSecondsToTime(seconds) {
+function formatMillisecondsToTime(seconds) {
   if (seconds === 0 || typeof seconds !== 'number') {
     return ''
   }
 
   const date = new Date(seconds)
-  let h = date.getUTCHours()
+  const h = date.getUTCHours()
   let m = date.getUTCMinutes()
   let s = date.getUTCSeconds()
   let time = ''

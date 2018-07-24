@@ -1,3 +1,5 @@
+import {formatTime} from '../../utils/time.js'
+
 class SleepButton {
   constructor({
     timeout,
@@ -14,7 +16,7 @@ class SleepButton {
     element.setAttribute('type', 'button')
     element.setAttribute('autofocus', 'autofocus')
     element.classList.add('button')
-    element.textContent = `${this._timeout} ms`
+    element.textContent = formatTime(this._timeout)
 
     this._element = element
 
