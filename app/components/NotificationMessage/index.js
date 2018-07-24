@@ -1,4 +1,4 @@
-import {NOTIFICATION_PERMISSIONS} from '../../constants.js'
+import {NOTIFICATION_PERMISSIONS} from './constants.js'
 
 class NotificationMessage {
   constructor({
