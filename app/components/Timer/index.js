@@ -9,19 +9,23 @@ class Timer {
     this._onEnd = onEnd
 
     this._startTimestamp = null
+    this._requestID = null
+    this._timer = null
 
     this._start()
   }
 
   _start() {
     this._next()
+    this._timer = window.setTimeout(() => this._end(), this._timeout)
   }
 
   _next() {
-    window.requestAnimationFrame(timestamp => this._tick(timestamp))
+    this._requestID = window.requestAnimationFrame(timestamp => this._tick(timestamp))
   }
 
   _end() {
+    this._reset()
     this._onEnd()
   }
 
@@ -39,9 +43,18 @@ class Timer {
 
     if (restTime > 0) {
       this._next()
-    } else {
-      this._end()
     }
+  }
+
+  stop() {
+    this._reset()
+  }
+
+  _reset() {
+    window.cancelAnimationFrame(this._requestID)
+    window.clearTimeout(this._timer)
+    this._requestID = null
+    this._timer = null
   }
 }
 
