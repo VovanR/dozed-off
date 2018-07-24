@@ -9,6 +9,7 @@ class SleepButton {
     this._onClick = onClick
 
     this._element = null
+    this._progress = 0
   }
 
   _build() {
@@ -16,9 +17,9 @@ class SleepButton {
     element.setAttribute('type', 'button')
     element.setAttribute('autofocus', 'autofocus')
     element.classList.add('button')
-    element.textContent = formatTime(this._timeout)
 
     this._element = element
+    this._setButtonText(this._timeout)
 
     this._bindEvents()
 
@@ -57,6 +58,15 @@ class SleepButton {
   _toggle(disabled) {
     this._element.disabled = disabled
     return this
+  }
+
+  setValue(value) {
+    this._progress = value
+    this._setButtonText(this._progress)
+  }
+
+  _setButtonText(timeout) {
+    this._element.textContent = formatTime(timeout)
   }
 }
 

@@ -51,10 +51,12 @@ function startTimer() {
     onEnd: () => {
       soundManager.play(SOUND_ID)
       sleepButton.enable()
+      sleepButton.setValue(timeout)
       progress.setValue(0)
       notificationMessage.show()
     },
-    onTick: progressTime => {
+    onTick: (progressTime, restTime) => {
+      sleepButton.setValue(restTime)
       progress.setValue(progressTime)
     }
   })
