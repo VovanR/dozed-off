@@ -1,5 +1,5 @@
 // Format timestamp
-export function formatTime(ms) {
+function formatTime(ms) {
   return formatMillisecondsToTime(mathRound(ms))
 }
 
@@ -20,12 +20,12 @@ function mathRound(num) {
  * @param {Number} milliseconds
  * @returns {String}
  */
-function formatMillisecondsToTime(seconds) {
-  if (seconds === 0 || typeof seconds !== 'number') {
+function formatMillisecondsToTime(milliseconds) {
+  if (milliseconds === 0 || typeof milliseconds !== 'number') {
     return ''
   }
 
-  const date = new Date(seconds)
+  const date = new Date(milliseconds)
   const h = date.getUTCHours()
   let m = date.getUTCMinutes()
   let s = date.getUTCSeconds()
@@ -46,4 +46,8 @@ function formatMillisecondsToTime(seconds) {
   time += m + ':' + s
 
   return time
+}
+
+export {
+  formatTime,
 }
