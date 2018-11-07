@@ -2,6 +2,7 @@
 @import "styles/base.css";
 @import "styles/app.css";
 @import "styles/copyright.css";
+@import "styles/noscript.css";
 
 @import "components/SleepButton/styles.css";
 @import "components/Progress/styles.css";
