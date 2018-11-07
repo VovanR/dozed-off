@@ -1,4 +1,5 @@
 import {formatTime} from '../../utils/time.js'
+import {createElement} from '../../utils/create-element.js'
 
 class SleepButton {
   constructor({
@@ -13,12 +14,14 @@ class SleepButton {
   }
 
   _build() {
-    const element = document.createElement('button')
-    element.setAttribute('type', 'button')
-    element.setAttribute('autofocus', 'autofocus')
-    element.classList.add('button')
-
-    this._element = element
+    this._element = createElement({
+      type: 'button',
+      className: 'button',
+      attributes: {
+        type: 'button',
+        autofocus: 'autofocus',
+      },
+    });
     this._setButtonText(this._timeout)
 
     this._bindEvents()

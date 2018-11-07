@@ -1,3 +1,5 @@
+import {createElement} from '../../utils/create-element.js'
+
 class Progress {
   constructor({
     value,
@@ -10,12 +12,14 @@ class Progress {
   }
 
   _build() {
-    const element = document.createElement('progress')
-    element.setAttribute('max', this._max)
-    element.value = this._value
-    element.classList.add('progress')
-
-    this._element = element
+    this._element = createElement({
+      type: 'progress',
+      className: 'progress',
+      attributes: {
+        max: this._max,
+        value: this._value,
+      },
+    })
 
     return this
   }
