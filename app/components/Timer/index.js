@@ -11,6 +11,8 @@ class Timer {
     this._startTimestamp = null
     this._requestID = null
     this._timer = null
+    this._tickTimestamp = null
+    this._tickThrottleMs = 500
 
     this._start()
   }
@@ -39,7 +41,10 @@ class Timer {
 
     this._restTime = restTime
 
-    this._onTick(progress, restTime)
+    if (timestamp - this._tickTimestamp >= this._tickThrottleMs || this._tickTimestamp === null) {
+      this._tickTimestamp = timestamp
+      this._onTick(progress, restTime)
+    }
 
     if (restTime > 0) {
       this._next()
