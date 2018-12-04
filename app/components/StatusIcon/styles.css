@@ -1,0 +1,32 @@
+.status-icon {
+  --size: 1em;
+
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  width: var(--size);
+  height: var(--size);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.status-icon::before {
+  display: block;
+  content: '';
+}
+
+.button_stopped .status-icon::before {
+  background-color: #c1e1fb;
+  width: calc(var(--size) - var(--size) * 0.3);
+  height: calc(var(--size) - var(--size) * 0.3);
+}
+
+.button_playing .status-icon::before {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent transparent transparent #2196f3;
+  border-width: calc(var(--size) / 2.5) 0 calc(var(--size) / 2.5) calc(var(--size) / 2);
+}

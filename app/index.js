@@ -3,6 +3,7 @@
 
 import SleepButton from './components/SleepButton/index.js'
 import Progress from './components/Progress/index.js'
+import StatusIcon from './components/StatusIcon/index.js'
 import Timer from './components/Timer/index.js'
 import NotificationMessage from './components/NotificationMessage/index.js'
 import {
@@ -16,12 +17,14 @@ const containerBlock = document.getElementById('app')
 
 const timeout = SLEEP_TIMEOUT
 
+const statusIcon = new StatusIcon()
 const progress = new Progress({
   value: 0,
   max: timeout
 })
 const sleepButton = new SleepButton({
   timeout,
+  textBeforeElement: statusIcon.getElement(),
   textAfterElement: progress.getElement(),
   onClick: startTimer
 })

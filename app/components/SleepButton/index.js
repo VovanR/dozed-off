@@ -12,6 +12,7 @@ const CLASS_NAME = {
 class SleepButton {
   constructor({
     timeout,
+    textBeforeElement = null,
     textAfterElement = null,
     onClick,
   }) {
@@ -20,6 +21,7 @@ class SleepButton {
 
     this._element = null
     this._textElement = null
+    this._textBeforeElement = textBeforeElement
     this._textAfterElement = textAfterElement
     this._progress = 0
   }
@@ -38,6 +40,7 @@ class SleepButton {
         autofocus: 'autofocus',
       },
       children: [
+        this._textBeforeElement,
         this._textElement,
         this._textAfterElement,
       ],
