@@ -1,13 +1,13 @@
 /**
  * Create HTMLElement
  * {@link http://jsfiddle.net/VovanR/6bwnfxat/}
- * @version 1.0.0
+ * @version 1.0.1
  *
  * @param {string} [type='div']
  * @param {string} [className]
  * @param {string} [text]
  * @param {string} [html]
- * @param {array} [children]
+ * @param {Node[]} [children]
  * @param {object} [attributes]
  * @param {object} [dataset]
  * @returns {HTMLElement}
@@ -46,7 +46,11 @@ const createElement = ({
   } else if (html) {
     element.innerHTML = html
   } else if (children) {
-    children.forEach(childElement => element.appendChild(childElement))
+    children.forEach(childElement => {
+      if (childElement instanceof Node) {
+        element.appendChild(childElement)
+      }
+    })
   }
 
   if (dataset) {
