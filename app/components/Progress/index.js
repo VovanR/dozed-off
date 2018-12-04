@@ -2,10 +2,10 @@ import {createElement} from '../../utils/create-element.js'
 
 class Progress {
   constructor({
-    value,
+    value = 0,
     max
   }) {
-    this._value = value || 0
+    this._value = value
     this._max = max
 
     this._element = null
@@ -13,13 +13,19 @@ class Progress {
 
   _build() {
     this._element = createElement({
-      type: 'progress',
       className: 'progress',
-      attributes: {
-        max: this._max,
-        value: this._value,
-      },
+      children: [
+        createElement({
+          className: 'progress__bar',
+          attributes: {
+            role: 'progressbar',
+          },
+        })
+      ]
     })
+
+    this._element.style.setProperty('--value', this._value)
+    this._element.style.setProperty('--max', this._max)
 
     return this
   }
@@ -35,7 +41,8 @@ class Progress {
   }
 
   setValue(value) {
-    this._element.value = value
+    this._value = Math.floor(value)
+    this._element.style.setProperty('--value', this._value)
     return this
   }
 }
