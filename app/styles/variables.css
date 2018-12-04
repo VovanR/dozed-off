@@ -1,9 +1,9 @@
 :root {
-  --button-color: gray;
+  --button-color: hsla(231, 48%, 37%, 0.95);
   --button-font-size: 3em;
   --button-border-color: silver;
   --button-background-color: transparent;
-  --disabled-button-color: silver;
+  --disabled-button-color: hsla(231, 24%, 37%, 0.5);
   --disabled-button-border-color: silver;
   --disabled-button-background-color: rgba(0, 0, 0, 0.05);
   --active-button-border-color: #2ecc71;
