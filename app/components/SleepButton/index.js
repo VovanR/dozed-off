@@ -1,27 +1,48 @@
 import {formatTime} from '../../utils/time.js'
 import {createElement} from '../../utils/create-element.js'
 
+const CLASS_NAME = {
+  element: 'button',
+  elementPlaying: 'button_playing',
+  elementPaused: 'button_paused',
+  elementStopped: 'button_stopped',
+  text: 'button__text',
+}
+
 class SleepButton {
   constructor({
     timeout,
-    onClick
+    textAfterElement = null,
+    onClick,
   }) {
     this._timeout = timeout
     this._onClick = onClick
 
     this._element = null
+    this._textElement = null
+    this._textAfterElement = textAfterElement
     this._progress = 0
   }
 
   _build() {
+    this._textElement = createElement({
+      type: 'span',
+      className: CLASS_NAME.text,
+    })
+
     this._element = createElement({
       type: 'button',
-      className: 'button',
+      className: CLASS_NAME.element,
       attributes: {
         type: 'button',
         autofocus: 'autofocus',
       },
+      children: [
+        this._textElement,
+        this._textAfterElement,
+      ],
     });
+
     this._setButtonText(this._timeout)
 
     this._bindEvents()
@@ -60,6 +81,8 @@ class SleepButton {
 
   _toggle(disabled) {
     this._element.disabled = disabled
+    this._element.classList.toggle(CLASS_NAME.elementPlaying, disabled)
+    this._element.classList.toggle(CLASS_NAME.elementStopped, !disabled)
     return this
   }
 
@@ -69,7 +92,7 @@ class SleepButton {
   }
 
   _setButtonText(timeout) {
-    this._element.textContent = formatTime(timeout)
+    this._textElement.textContent = formatTime(timeout)
   }
 }
 

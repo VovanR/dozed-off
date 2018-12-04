@@ -1,9 +1,7 @@
-button {
-  flex-grow: 5;
-  flex-shrink: 1;
+.button {
 }
 
-button {
+.button {
   color: var(--button-color);
   font-size: var(--button-font-size);
   background: var(--button-background-color);
@@ -13,20 +11,37 @@ button {
   transition: all ease 0.25s;
 }
 
-button:disabled {
+.button:disabled {
   color: var(--disabled-button-color);
   background: var(--disabled-button-background-color);
   box-shadow: inset 0 0 0 1px var(--disabled-button-border-color);
 }
 
-button:focus {
+.button:focus {
   box-shadow: inset 0 0 0 1px var(--button-border-color),
               inset 0 0 0 2px white,
               inset 0 0 0 3px var(--active-button-border-color);
   outline: none;
 }
 
-button:active {
+.button:active {
   background-color: var(--active-button-background-color);
   outline: none;
+}
+
+.button {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  padding: 8px;
+}
+
+.button__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 5;
+  flex-shrink: 1;
 }

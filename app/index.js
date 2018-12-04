@@ -16,18 +16,18 @@ const containerBlock = document.getElementById('app')
 
 const timeout = SLEEP_TIMEOUT
 
-const sleepButton = new SleepButton({
-  timeout,
-  onClick: startTimer
-})
 const progress = new Progress({
   value: 0,
   max: timeout
 })
+const sleepButton = new SleepButton({
+  timeout,
+  textAfterElement: progress.getElement(),
+  onClick: startTimer
+})
 
 const fragment = document.createDocumentFragment()
 fragment.appendChild(sleepButton.getElement())
-fragment.appendChild(progress.getElement())
 containerBlock.prepend(fragment)
 
 function initialize() {
