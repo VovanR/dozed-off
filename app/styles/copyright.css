@@ -15,13 +15,14 @@
 ```
 */
 .copyright {
+  visibility: hidden;
   position: fixed;
   right: 0;
   bottom: 0;
-  opacity: 0.4;
+  opacity: 0;
   font-family: monospace;
   background-color: #fff;
-  transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   font-size: 100%;
   padding: 1em;
   text-decoration: none;
@@ -29,8 +30,13 @@
   white-space: nowrap;
 }
 
+.app:hover .copyright {
+  visibility: visible;
+  opacity: 0.4;
+}
+
 .copyright:hover {
-  opacity: 1;
+  opacity: 1 !important;
   text-decoration: none;
 }
 
@@ -38,7 +44,12 @@
 }
 
 .copyright__author {
+  display: none;
   text-decoration: underline;
+}
+
+.copyright:hover .copyright__author {
+  display: inline-block;
 }
 
 .copyright {
