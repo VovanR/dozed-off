@@ -1,5 +1,8 @@
 # dozed-off
 
+<img align="right" width="120" height="120"
+     src="./logo.svg" alt="Dozed OFF logo">
+
 [![XO code style][codestyle-image]][codestyle-url]
 
 > Break for 15 minutes sleep
