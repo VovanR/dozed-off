@@ -7,7 +7,7 @@
   "repository": "VovanR/dozed-off",
   "author": "Vladimir Rodkin <mail@vovanr.com> (https://github.com/VovanR)",
   "scripts": {
-    "start": "hs .",
+    "start": "http-server .",
     "test": "xo"
   },
   "main": "index.html",
