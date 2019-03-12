@@ -2,8 +2,8 @@
   "name": "dozed-off",
   "version": "0.0.0",
   "description": "Break for 15 minutes sleep",
-  "private": true,
   "license": "MIT",
+  "private": true,
   "repository": "VovanR/dozed-off",
   "author": "Vladimir Rodkin <mail@vovanr.com> (https://github.com/VovanR)",
   "scripts": {

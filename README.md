@@ -5,6 +5,7 @@
 
 [![XO code style][codestyle-image]][codestyle-url]
 
+[![Build Status][travis-image]][travis-url]
 [![Dependency Status][depstat-image]][depstat-url]
 [![DevDependency Status][depstat-dev-image]][depstat-dev-url]
 
@@ -25,6 +26,9 @@ MIT © [Vladimir Rodkin](https://github.com/VovanR)
 
 [codestyle-url]: https://github.com/xojs/xo
 [codestyle-image]: https://img.shields.io/badge/code_style-XO-5ed9c7.svg?style=flat-square
+
+[travis-url]: https://travis-ci.org/VovanR/dozed-off
+[travis-image]: https://img.shields.io/travis/VovanR/dozed-off.svg?style=flat-square
 
 [depstat-url]: https://david-dm.org/VovanR/from-date-to-date
 [depstat-image]: https://david-dm.org/VovanR/from-date-to-date.svg?style=flat-square
