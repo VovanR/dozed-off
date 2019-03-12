@@ -3,6 +3,7 @@
 import SleepButton from './components/SleepButton/index.js'
 import Progress from './components/Progress/index.js'
 import StatusIcon from './components/StatusIcon/index.js'
+import Settings from './components/Settings/index.js'
 import Timer from './components/Timer/index.js'
 import Audio from './components/Audio/index.js'
 import NotificationMessage from './components/NotificationMessage/index.js'
@@ -18,13 +19,17 @@ const timeout = SLEEP_TIMEOUT
 const audio = new Audio()
 
 const statusIcon = new StatusIcon()
+const settings = new Settings({audio})
 const progress = new Progress({
   value: 0,
   max: timeout
 })
 const sleepButton = new SleepButton({
   timeout,
-  textBeforeElement: statusIcon.getElement(),
+  textBeforeElement: [
+    statusIcon.getElement(),
+    settings.getElement()
+  ],
   textAfterElement: progress.getElement(),
   onClick: startTimer
 })
