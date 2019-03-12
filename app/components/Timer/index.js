@@ -13,8 +13,6 @@ class Timer {
     this._timer = null
     this._tickTimestamp = null
     this._tickThrottleMs = 500
-
-    this._start()
   }
 
   _start() {
@@ -49,6 +47,10 @@ class Timer {
     if (restTime > 0) {
       this._next()
     }
+  }
+
+  start() {
+    this._start()
   }
 
   stop() {

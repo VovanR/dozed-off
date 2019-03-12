@@ -1,4 +1,3 @@
-/* global fetch */
 /* eslint arrow-parens: "off" */
 
 import SleepButton from './components/SleepButton/index.js'
@@ -12,7 +11,7 @@ import {
   NOTIFICATION_MESSAGE
 } from './constants.js'
 
-const containerBlock = document.getElementById('app')
+const containerBlock = document.querySelector('#app')
 
 const timeout = SLEEP_TIMEOUT
 
@@ -31,7 +30,7 @@ const sleepButton = new SleepButton({
 })
 
 const fragment = document.createDocumentFragment()
-fragment.appendChild(sleepButton.getElement())
+fragment.append(sleepButton.getElement())
 containerBlock.prepend(fragment)
 
 function startTimer() {
@@ -43,7 +42,7 @@ function startTimer() {
 
   sleepButton.disable()
 
-  new Timer({
+  const timer = new Timer({
     timeout,
     onEnd: () => {
       audio.play()
@@ -57,4 +56,6 @@ function startTimer() {
       progress.setValue(progressTime)
     }
   })
+
+  timer.start()
 }

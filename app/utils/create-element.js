@@ -27,7 +27,7 @@ const createElement = ({
   html,
   children,
   attributes,
-  dataset,
+  dataset
 } = {}) => {
   const element = document.createElement(type)
 
@@ -63,5 +63,5 @@ const createElement = ({
 }
 
 export {
-  createElement,
+  createElement
 }

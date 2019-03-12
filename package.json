@@ -13,7 +13,7 @@
   "main": "index.html",
   "devDependencies": {
     "http-server": "^0.11.1",
-    "xo": "^0.21.1"
+    "xo": "^0.24.0"
   },
   "bugs": {
     "url": "https://github.com/VovanR/dozed-off/issues"

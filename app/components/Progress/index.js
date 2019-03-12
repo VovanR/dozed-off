@@ -18,8 +18,8 @@ class Progress {
         createElement({
           className: 'progress__bar',
           attributes: {
-            role: 'progressbar',
-          },
+            role: 'progressbar'
+          }
         })
       ]
     })
@@ -37,6 +37,7 @@ class Progress {
     if (this._element) {
       return this._element
     }
+
     return this._build()._element
   }
 

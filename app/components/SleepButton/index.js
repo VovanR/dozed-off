@@ -6,7 +6,7 @@ const CLASS_NAME = {
   elementPlaying: 'button_playing',
   elementPaused: 'button_paused',
   elementStopped: 'button_stopped',
-  text: 'button__text',
+  text: 'button__text'
 }
 
 class SleepButton {
@@ -14,7 +14,7 @@ class SleepButton {
     timeout,
     textBeforeElement = null,
     textAfterElement = null,
-    onClick,
+    onClick
   }) {
     this._timeout = timeout
     this._onClick = onClick
@@ -29,7 +29,7 @@ class SleepButton {
   _build() {
     this._textElement = createElement({
       type: 'span',
-      className: CLASS_NAME.text,
+      className: CLASS_NAME.text
     })
 
     this._element = createElement({
@@ -37,14 +37,14 @@ class SleepButton {
       className: CLASS_NAME.element,
       attributes: {
         type: 'button',
-        autofocus: 'autofocus',
+        autofocus: 'autofocus'
       },
       children: [
         this._textBeforeElement,
         this._textElement,
-        this._textAfterElement,
-      ],
-    });
+        this._textAfterElement
+      ]
+    })
 
     this._setButtonText(this._timeout)
 
@@ -64,6 +64,7 @@ class SleepButton {
     if (this._element) {
       return this._element
     }
+
     return this._build()._element
   }
 

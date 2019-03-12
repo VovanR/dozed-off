@@ -11,14 +11,15 @@ function mathRound(num) {
 /**
  * Format Milliseconds To Time
  *
- * @see {@link https://jsfiddle.net/VovanR/kbx1sayd/}
+ * {@link https://jsfiddle.net/VovanR/kbx1sayd/}
+ * @version 1.0.0
+ *
+ * @param {number} milliseconds - time in milliseconds
+ * @returns {string} formatted time string
  *
  * @example
- * // returns '07:40'
  * formatMillisecondsToTime(460000);
- *
- * @param {Number} milliseconds
- * @returns {String}
+ * //=> '07:40'
  */
 function formatMillisecondsToTime(milliseconds) {
   if (milliseconds === 0 || typeof milliseconds !== 'number') {
@@ -49,5 +50,5 @@ function formatMillisecondsToTime(milliseconds) {
 }
 
 export {
-  formatTime,
+  formatTime
 }

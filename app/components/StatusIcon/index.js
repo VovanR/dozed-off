@@ -8,7 +8,7 @@ class StatusIcon {
   _build() {
     this._element = createElement({
       type: 'span',
-      className: `status-icon`
+      className: 'status-icon'
     })
 
     return this
@@ -21,6 +21,7 @@ class StatusIcon {
     if (this._element) {
       return this._element
     }
+
     return this._build()._element
   }
 }
