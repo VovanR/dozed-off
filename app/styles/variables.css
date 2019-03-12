@@ -1,6 +1,11 @@
 :root {
+  --app-font-size: 1em;
+  /* Font stack from Bootstrap 4 */
+  --app-font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
   --button-color: hsla(231, 48%, 37%, 0.95);
-  --button-font-size: 3em;
+  --button-font-family: var(--app-font-family);
+  --button-font-size: 4em;
   --button-border-color: silver;
   --button-background-color: transparent;
   --disabled-button-color: hsla(231, 24%, 37%, 0.5);

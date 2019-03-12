@@ -30,7 +30,7 @@
   white-space: nowrap;
 }
 
-.app:hover .copyright {
+body:hover .copyright {
   visibility: visible;
   opacity: 0.4;
 }
@@ -56,5 +56,4 @@
   border-right: 2px solid transparent;
   border-bottom: 2px solid transparent;
   background-clip: padding-box;
-  z-index: 10;
 }
