@@ -12,6 +12,8 @@
 
 Demo: [vovanr.github.io/dozed-off][demo]
 
+![](preview.png)
+
 ## Resources
 
 - [ding.mp3](https://freesound.org/people/Daronoxus/sounds/393633/)
