@@ -17,7 +17,10 @@ class NotificationMessage {
 
   show() {
     if (Notification.permission === NOTIFICATION_PERMISSION.GRANTED) {
-      return new Notification(this._message)
+      return new Notification(this._message, {
+        body: 'Make some work',
+        icon: 'public/apple-touch-icon.png'
+      })
     }
   }
 }
