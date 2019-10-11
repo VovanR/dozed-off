@@ -6,6 +6,7 @@
   --button-color: hsla(231, 48%, 37%, 0.95);
   --button-font-family: var(--app-font-family);
   --button-font-size: 4em;
+  --button-padding: 8px;
   --button-border-color: silver;
   --button-background-color: transparent;
   --disabled-button-color: hsla(231, 24%, 37%, 0.5);

@@ -8,3 +8,5 @@
 @import "components/Progress/styles.css";
 @import "components/StatusIcon/styles.css";
 @import "components/Settings/styles.css";
+
+@import "styles/media.css";

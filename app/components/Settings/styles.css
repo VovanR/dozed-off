@@ -18,6 +18,7 @@
 
 .settings::before {
   display: block;
+  font-size: var(--size);
   /* Gear icon */
   /*content: '\2699';*/
   /* Bell icon */

@@ -38,7 +38,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   flex-grow: 1;
-  padding: 8px;
+  padding: var(--button-padding);
 }
 
 .button__text {
