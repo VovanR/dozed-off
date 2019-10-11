@@ -13,7 +13,7 @@
   "main": "index.html",
   "devDependencies": {
     "http-server": "^0.11.1",
-    "xo": "^0.24.0"
+    "xo": "^0.25.3"
   },
   "bugs": {
     "url": "https://github.com/VovanR/dozed-off/issues"
@@ -25,7 +25,8 @@
     "envs": "browser",
     "rules": {
       "import/extensions": 0,
-      "unicorn/import-index": 0
+      "unicorn/import-index": 0,
+      "import/no-useless-path-segments": 0
     }
   }
 }

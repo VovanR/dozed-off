@@ -8,13 +8,35 @@ import Timer from './components/Timer/index.js'
 import Audio from './components/Audio/index.js'
 import NotificationMessage from './components/NotificationMessage/index.js'
 import {
-  SLEEP_TIMEOUT,
+  DEFAULT_SLEEP_TIMEOUT,
   NOTIFICATION_MESSAGE
 } from './constants.js'
+import SearchParamsStorage from './utils/search-params-storage.js'
+import minutesToMilliseconds from './utils/minutes-to-milliseconds.js'
 
 const containerBlock = document.querySelector('#app')
 
-const timeout = SLEEP_TIMEOUT
+let timeout = DEFAULT_SLEEP_TIMEOUT
+
+const searchParamsStorage = new SearchParamsStorage()
+let {
+  m,
+  autostart
+} = searchParamsStorage.load()
+
+if (typeof m === 'string') {
+  m = Number.parseInt(m, 10)
+
+  if (Number.isInteger(m)) {
+    timeout = minutesToMilliseconds(m)
+  }
+
+  if (autostart !== 'false') {
+    autostart = true
+  }
+} else {
+  autostart = autostart === 'true'
+}
 
 const audio = new Audio()
 
@@ -37,6 +59,10 @@ const sleepButton = new SleepButton({
 const fragment = document.createDocumentFragment()
 fragment.append(sleepButton.getElement())
 containerBlock.prepend(fragment)
+
+if (autostart === true) {
+  startTimer()
+}
 
 function startTimer() {
   const notificationMessage = new NotificationMessage({

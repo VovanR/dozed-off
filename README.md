@@ -15,6 +15,26 @@ Demo: [vovanr.github.io/dozed-off][demo]
 
 ![](preview.png)
 
+## Usage
+
+`https://vovanr.github.io/dozed-off/?<search_params>`
+
+### Search params `<search_params>`
+
+#### `m=<number>`
+Default: `15` minutes
+
+Timer minutes.
+
+Example: `https://vovanr.github.io/dozed-off/?m=5`
+
+#### `autostart=<boolean>`
+Default: `false`, but `true` it `m` is defined.
+
+Start timer on page loaded.
+
+Example: `https://vovanr.github.io/dozed-off/?m=5&autostart=false`
+
 ## Resources
 
 - [ding.mp3](https://freesound.org/people/Daronoxus/sounds/393633/)
