@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/VovanR/dozed-off/issues"
   },
-  "homepage": "https://github.com/VovanR/dozed-off#readme",
+  "homepage": "https://vovanr.github.io/dozed-off",
   "xo": {
     "space": true,
     "semicolon": false,
